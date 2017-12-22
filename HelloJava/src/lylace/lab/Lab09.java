@@ -105,7 +105,7 @@ public class Lab09 {
 					break;
 			}
 
-			if (input.length() != 2 || x <= 0 || x > SIZE || y <= 0 || y >= SIZE) {
+			if (input.length() != 2 || x <= 0 || x >= SIZE || y <= 0 || y >= SIZE) {
 				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
 				continue;
 			}

@@ -12,27 +12,26 @@ public class Lab07 {
 		// 현재 연도가 4로 나눠 떨어지지만, 100으로는 나눠 떨어지지 않음
 		// 현재 연도가 400으로 나눠 떨어짐
 		// GregorianCalendar gc = new GregorianCalendar();
-		// // int year = 2000;
-		// Scanner sc = new Scanner(System.in);
-		// // if (gc.isLeapYear(year)) {
-		// // System.out.printf("%d는 윤년입니다%n", year);
-		// // } else {
-		// // System.out.printf("%d는 윤년이 아닙니다%n", year);
-		// // }
-		//
-		// String welcome = "윤년을 확인할 연도를 입력하세요", fmt1 = "%d년은 윤년입니다%n", fmt2 = "%d년은 윤년이
-		// 아닙니다%n";
-		//
-		// System.out.println(welcome);
-		// int year = sc.nextInt();
-		// if ((year % 4 == 0 && !(year % 100 == 0)) || (year % 400 == 0)) {
-		// System.out.printf(fmt1, year);
-		// // } else if (year % 400 == 0) { // else if 대신에 if 하나에 넣을 수 있음.
-		// // System.out.printf("%d는 윤년입니다%n", year);
+		// int year = 2000;
+		Scanner sc = new Scanner(System.in);
+		// if (gc.isLeapYear(year)) {
+		// System.out.printf("%d는 윤년입니다%n", year);
 		// } else {
-		// System.out.printf(fmt2, year);
-		//
+		// System.out.printf("%d는 윤년이 아닙니다%n", year);
 		// }
+
+		String welcome = "윤년을 확인할 연도를 입력하세요", fmt1 = "%d년은 윤년입니다%n", fmt2 = "%d년은 윤년이 아닙니다%n";
+
+		System.out.println(welcome);
+		int year = sc.nextInt();
+		if ((year % 4 == 0 && !(year % 100 == 0)) || (year % 400 == 0)) {
+			System.out.printf(fmt1, year);
+			// } else if (year % 400 == 0) { // else if 대신에 if 하나에 넣을 수 있음.
+			// System.out.printf("%d는 윤년입니다%n", year);
+		} else {
+			System.out.printf(fmt2, year);
+
+		}
 
 		// #23 - 복권 발행 프로그램
 		// 특정범위를 포함하는 난수 생성
@@ -42,62 +41,62 @@ public class Lab07 {
 		// lotto : 657, lucky : 524 = 1개 일치
 		// lotto : 657, lucky : 123 = 0개 일치
 		// lotto : 657, lucky : 726 = 2개 일치
-
-		Scanner sc = new Scanner(System.in);
-
-		int rand = (int) (Math.random() * 100000);
-		int lotto = rand % ((999 - 100) + 1) + 100;
-		System.out.println(lotto);
-
-		String lucky = sc.nextLine();
-
-		// 문자 하나씩 추출
-
-		char lucky1 = lucky.charAt(0);
-		char lucky2 = lucky.charAt(1);
-		char lucky3 = lucky.charAt(2);
-
-		char lotto1 = ("" + lotto).charAt(0);
-		char lotto2 = ("" + lotto).charAt(1);
-		char lotto3 = ("" + lotto).charAt(2);
-
-		// 비교
-		int match = 0;
-		// if (lotto1 == lucky1 || lotto1 == lucky2 || lotto1 == lucky3) {
-		// ++match;
-		// if (lotto2 == lucky1 || lotto2 == lucky2 || lotto2 == lucky3) {
-		// ++match;
-		// if (lotto3 == lucky1 || lotto3 == lucky2 || lotto3 == lucky3) {
-		// ++match;
+		//
+		// Scanner sc = new Scanner(System.in);
+		//
+		// int rand = (int) (Math.random() * 100000);
+		// int lotto = rand % ((999 - 100) + 1) + 100;
+		// System.out.println(lotto);
+		//
+		// String lucky = sc.nextLine();
+		//
+		// // 문자 하나씩 추출
+		//
+		// char lucky1 = lucky.charAt(0);
+		// char lucky2 = lucky.charAt(1);
+		// char lucky3 = lucky.charAt(2);
+		//
+		// char lotto1 = ("" + lotto).charAt(0);
+		// char lotto2 = ("" + lotto).charAt(1);
+		// char lotto3 = ("" + lotto).charAt(2);
+		//
+		// // 비교
+		// int match = 0;
+		// // if (lotto1 == lucky1 || lotto1 == lucky2 || lotto1 == lucky3) {
+		// // ++match;
+		// // if (lotto2 == lucky1 || lotto2 == lucky2 || lotto2 == lucky3) {
+		// // ++match;
+		// // if (lotto3 == lucky1 || lotto3 == lucky2 || lotto3 == lucky3) {
+		// // ++match;
+		// // }
+		// // }
+		// // }
+		//
+		// String lotto4 = "" + lotto;
+		// int size = lotto4.length();
+		// for (int i = 0; i < size; i++) {
+		// for (int j = 0; j < size; j++) {
+		// if (lucky.charAt(i) == lotto4.charAt(j)) {
+		// match++;
 		// }
 		// }
+		//
 		// }
-
-		String lotto4 = "" + lotto;
-		int size = lotto4.length();
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				if (lucky.charAt(i) == lotto4.charAt(j)) {
-					match++;
-				}
-			}
-
-		}
-
-		switch (match) {
-		case 1:
-			System.out.println("1개 일치! 상금 1천 지급");
-			break;
-		case 2:
-			System.out.println("2개 일치! 상금 1만 지급");
-			break;
-		case 3:
-			System.out.println("모두 일치! 상금 1백만 지급");
-			break;
-		default:
-			System.out.println("다음 기회에...");
-			break;
-		}
+		//
+		// switch (match) {
+		// case 1:
+		// System.out.println("1개 일치! 상금 1천 지급");
+		// break;
+		// case 2:
+		// System.out.println("2개 일치! 상금 1만 지급");
+		// break;
+		// case 3:
+		// System.out.println("모두 일치! 상금 1백만 지급");
+		// break;
+		// default:
+		// System.out.println("다음 기회에...");
+		// break;
+		// }
 
 		// # 24
 		// Scanner sc = new Scanner(System.in);
@@ -115,20 +114,20 @@ public class Lab07 {
 		// System.out.printf(fmt3, ggNo, i, ggNo * i);
 		// }
 
-		// String welcome1 = "출력할 구구단의 단을 입력하시오(1-9)";
-		// String error = "잘못 입력하셨습니다!!";
-		// String fmt3 = "%d x %d = %2d\n";
-		// System.out.println(welcome1);
-		// int ggNo = System.in.read() - 48;
-		//
-		// if (1 <= ggNo && ggNo <= 9) {
-		// for (int i = 1; i <= 9; i++) {
-		// System.out.printf(fmt3, ggNo, i, ggNo * i);
-		// }
-		// } else {
-		// System.out.println(error);
-		// }
-		// System.out.println(ggNo);
+		String welcome1 = "출력할 구구단의 단을 입력하시오(1-9)";
+		String error = "잘못 입력하셨습니다!!";
+		String fmt3 = "%d x %d = %2d\n";
+		System.out.println(welcome1);
+		int ggNo = System.in.read() - 48;
+
+		if (1 <= ggNo && ggNo <= 9) {
+			for (int i = 1; i <= 9; i++) {
+				System.out.printf(fmt3, ggNo, i, ggNo * i);
+			}
+		} else {
+			System.out.println(error);
+		}
+		System.out.println(ggNo);
 
 		// # 25 - 문자와 숫자 변환
 		// 소문자 a : 97, 대문자 A : 65 유니코드값
@@ -148,22 +147,22 @@ public class Lab07 {
 		// System.out.println("잘못 입력하셨습니다!!");
 		// }
 
-		// # 26 - 숫자 맞추기
-		sc = new Scanner(System.in); // 키보드로부터 데이터를 입력받을 준비를 함
-		int num2 = (int) (Math.random() * 100) + 1;
-		System.out.println("1-100사이의 정수를 입력하시오");
-		while (true) {
-			int num1 = sc.nextInt(); // 정수를 입력받음
-
-			if (num1 > num2)
-				System.out.println("추측한 숫자가 큽니다");
-			else if (num1 < num2)
-				System.out.println("추측한 숫자가 작습니다");
-			else if (num1 == num2) {
-				System.out.println("빙고! 숫자를 맞췄습니다");
-				break;
-			}
-		}
+		// // # 26 - 숫자 맞추기
+		// sc = new Scanner(System.in); // 키보드로부터 데이터를 입력받을 준비를 함
+		// int num2 = (int) (Math.random() * 100) + 1;
+		// System.out.println("1-100사이의 정수를 입력하시오");
+		// while (true) {
+		// int num1 = sc.nextInt(); // 정수를 입력받음
+		//
+		// if (num1 > num2)
+		// System.out.println("추측한 숫자가 큽니다");
+		// else if (num1 < num2)
+		// System.out.println("추측한 숫자가 작습니다");
+		// else if (num1 == num2) {
+		// System.out.println("빙고! 숫자를 맞췄습니다");
+		// break;
+		// }
+		// }
 
 		// # 27
 
