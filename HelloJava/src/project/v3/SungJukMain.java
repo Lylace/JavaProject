@@ -1,8 +1,6 @@
-package project.v2;
+package project.v3;
 
 import java.util.Scanner;
-
-import project.v1.SungJukVO;
 
 public class SungJukMain {
 
@@ -37,7 +35,7 @@ public class SungJukMain {
 		// 입력한 문자를 ASCII로 변환해서 정수로 저장
 		int smenu = sc.next().charAt(0);
 
-		switch (smenu - 48) {
+		switch (smenu - '0') {
 		case 1:
 			newSungJuk();
 			break;
@@ -131,6 +129,12 @@ public class SungJukMain {
 	}
 
 	private static void exitSungJuk() {
+		try {
+			sjsrv.finalize();
+			System.out.println(SAYGOODBYE);
+		} catch (Throwable e) {
+			System.out.println(EXITERROR);
+		}
 		System.exit(0);
 	}
 
